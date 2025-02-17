@@ -2,4 +2,12 @@
   from = "/*"
   to = "https://gnyiqneo.dora.run/:splat"
   status = 301
-  force = true
+  force = true  # Only needed if you have other potentially conflicting rules
+
+[images]
+  remote_images = []
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
